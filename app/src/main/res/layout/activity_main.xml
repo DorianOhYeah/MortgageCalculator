@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:orientation="vertical"
+    android:padding="5dp">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="45dp">
+
+                <TextView
+                    android:id="@+id/tv_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="Total price: "
+                    android:textColor="#000000"
+                    android:textSize="17sp"/>
+
+                <EditText
+                    android:id="@+id/et_price"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_toLeftOf="@+id/tv_unit"
+                    android:layout_toRightOf="@id/tv_price"
+                    android:background="@drawable/edit_selector"
+                    android:gravity="center|right"
+                    android:hint="Please enter the total price(10 thousand)"
+                    android:inputType="number"
+                    android:maxLength="4"
+                    android:textColor="#000000"
+                    android:textSize="17sp"/>
+
+                <TextView
+                    android:id="@+id/tv_unit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true"
+                    android:gravity="center"
+                    android:text="  0000 yuan"
+                    android:textColor="#000000"
+                    android:textSize="17sp"/>
+            </RelativeLayout>
+            
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="45dp">
+                
+                <TextView
+                    android:id="@+id/tv_part"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="loan part:"
+                    android:textColor="#000000"
+                    android:textSize="17sp"/>
+                
+                <EditText
+                    android:id="@+id/et_loan"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_toRightOf="@id/tv_part"
+                    android:layout_toLeftOf="@+id/tv_percent"
+                    android:background="@drawable/edit_selector"
+                    android:gravity="center|right"
+                    android:hint="Please enter loan percent"
+                    android:inputType="number"
+                    android:maxLength="2"
+                    android:textSize="17sp"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:id="@+id/tv_percent"
+                    android:layout_alignParentRight="true"
+                    android:gravity="center"
+                    android:text="  %"
+                    android:textColor="#000000"
+                    android:textSize="17sp"/>
+            </RelativeLayout>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/btn_loan"
+                android:text="Calculate the total price of loan"
+                android:textSize="17sp"/>
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:orientation="horizontal"
+                android:id="@+id/rg_payment">
+
+                <TextView
+                    android:id="@+id/tv_loan"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="Payment method："
+                    android:textColor="#000000"
+                    android:textSize="17sp" />
+
+                <RadioButton
+                    android:id="@+id/rb_interest"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:checked="true"
+                    android:gravity="left|center"
+                    android:text="Equivalent principal and interest"
+                    android:textColor="#000000"
+                    android:textSize="17sp" />
+
+                <RadioButton
+                    android:id="@+id/rb_principal"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:checked="false"
+                    android:gravity="left|center"
+                    android:text="Equivalent principal"
+                    android:textColor="#000000"
+                    android:textSize="17sp" />
+            </RadioGroup>
+            
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="45dp">
+
+                <CheckBox
+                    android:id="@+id/ck_business"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:checked="true"
+                    android:gravity="center"
+                    android:text="Loan：　"
+                    android:textColor="#000000"
+                    android:textSize="17sp" />
+
+                <EditText
+                    android:id="@+id/et_business"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_toLeftOf="@+id/tv_business_unit"
+                    android:layout_toRightOf="@+id/ck_business"
+                    android:background="@drawable/edit_selector"
+                    android:gravity="right|center"
+                    android:hint="Please enter the totoal loan（unit 10000yuan）"
+                    android:inputType="number"
+                    android:maxLength="4"
+                    android:textColor="#000000"
+                    android:textSize="17sp" />
+
+                <TextView
+                    android:id="@+id/tv_business_unit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true"
+                    android:gravity="center"
+                    android:text="　0000yuan"
+                    android:textColor="#000000"
+                    android:textSize="17sp" />
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="45dp" >
+
+
+                <CheckBox
+                    android:id="@+id/ck_accumulation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:checked="false"
+                    android:gravity="center"
+                    android:text="Accumulation fund："
+                    android:textColor="#000000"
+                    android:textSize="17sp" />
+
+                <EditText
+                    android:id="@+id/et_accumulation"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_toLeftOf="@+id/tv_accumulation_unit"
+                    android:layout_toRightOf="@+id/ck_accumulation"
+                    android:background="@drawable/edit_selector"
+                    android:gravity="right|center"
+                    android:hint="Please enter the total loan of accumulation fund（单位万）"
+                    android:inputType="number"
+                    android:maxLength="4"
+                    android:textSize="17sp" />
+
+                <TextView
+                    android:id="@+id/tv_accumulation_unit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true"
+                    android:gravity="center"
+                    android:text="　0000yuan"
+                    android:textSize="17sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="45dp" >
+
+                <TextView
+                    android:id="@+id/tv_year"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentLeft="true"
+                    android:gravity="center"
+                    android:text="Year of loan："
+                    android:textSize="17sp" />
+
+                <Spinner
+                    android:id="@+id/sp_year"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_toRightOf="@+id/tv_year"
+                    android:gravity="left|center"
+                    android:spinnerMode="dialog" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="45dp" >
+
+                <TextView
+                    android:id="@+id/tv_ratio"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentLeft="true"
+                    android:gravity="center"
+                    android:text="basic interest ratio："
+                    android:textSize="17sp" />
+
+                <Spinner
+                    android:id="@+id/sp_ratio"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_toRightOf="@+id/tv_ratio"
+                    android:gravity="left|center"
+                    android:spinnerMode="dialog" />
+            </RelativeLayout>
+
+            <Button
+                android:id="@+id/btn_calculate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Calculate the detail of payment"
+                android:textSize="17sp" />
+
+            <TextView
+                android:id="@+id/tv_payment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:text="Total payment：***0000yuan\ntotal interest：***0000\nmonthly(amount per month)为：***"
+
+                android:textSize="17sp" />
+        </LinearLayout>
+    </ScrollView>
+
+
+</LinearLayout>
